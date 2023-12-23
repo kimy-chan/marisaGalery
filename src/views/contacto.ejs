@@ -1,0 +1,70 @@
+<%- include('./partials/header',{title,categories}) %>
+  <div class="map">
+    <div class="row mt-0 map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6047.830333149744!2d-65.26287122269668!3d-19.034481971045135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f1ae126b914f21%3A0x7c31f47f6ecbc7ec!2sDestacamento%20111%20N%C2%BA%20192%2C%20Sucre%2C%20Bolivia!5e0!3m2!1sen!2sus!4v1563812068529!5m2!1sen!2sus"
+        width="100%" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+  </div>
+  <div class="container-fluid mt-6 caja-datos">
+    <div class="col-md-12 datos">
+      <div class="mapgoogle">
+        <i class="ri-map-pin-fill"></i>
+        <div class="mapgoogle1">
+          <h4>Dirección</h4></i>
+          <p>Destacamento 111 Nº 193, <br> BOLIVIA-SUCRE</p>
+        </div>
+      </div>
+      <div class="celular">
+        <i class="ri-phone-fill"></i>
+        <div class="celular1">
+          <h4>Celular</h4>
+          <p>+591 74216356</p>
+        </div>
+      </div>
+      <div class="gmail">
+        <i class="ri-mail-fill"></i>
+        <div class="gmail">
+          <h4>Gmail</h4>
+          <p>marisadesign@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="linea"></div>
+  <div class="container mt-6 caja-boletingeneral">
+    <div class="col-md-12 caja-boletin">
+      <div class="titulo">
+        <h4>SUSCRÍBETE A NUESTRO BOLETÍN</h4>
+      </div>
+      <form id="subscriptionForm" method="post">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" class="form-control" id="nombre" name="names" required>
+          <div id="error-names" class="error-message"></div>
+        </div>
+        <div class="form-group">
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" class="form-control" id="correo" name="email" required>
+          <div id="error-email" class="error-message"></div>
+
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje Opcional:</label>
+          <textarea class="form-control" id="mensaje" name="texto" rows="2"></textarea>
+          <div id="error-texto" class="error-message"></div>
+
+        </div>
+        <div id="success"></div>
+        <div id="error-messages"></div>
+        <div class="boton">
+          <button type="button" onclick="submitForm()">SUSCRÍBETE</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  </div>
+  <div class=" linea">
+  </div>
+  <%- include('./partials/footer') %>

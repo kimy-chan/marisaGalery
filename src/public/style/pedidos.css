@@ -1,0 +1,138 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root
+{
+    --fondo-blanco:#fff;
+    --fondo-negro:#0f0f0b;
+    --fondo-gris-b:#919191;
+    --fondo-gris-a:#AAAAAA;
+    --fondo-rosa:#FBEBD2;
+    --fondo-resaltador:#D09456;
+    --fondo-resaltador2:#FADBC8;
+}
+.contenedor
+{
+    background-color: var(--fondo-blanco);
+    border-radius: 14px;
+    padding: 18px 30px;
+    width: 90%;
+    height: auto;
+}
+.title
+{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 0px 6px;
+}
+.title h1 
+{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.title .carrito
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color:var(--fondo-resaltador);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.title .carrito i
+{
+    text-decoration: none;
+    list-style: none;
+    color: var(--fondo-blanco);
+    font-weight: bold;
+}
+.sumatoria
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 4px 20px;
+}
+.total
+{
+    color: var(--fondo-resaltador);
+    font-weight: bold;
+}
+.forms .form
+{
+    color: var(--fondo-resaltador);
+    font-weight: bold;
+}
+.forms .form input
+{
+    background-color:#E7E7E7;
+    border-radius: 0%;
+    border: none;
+    width: 98%;
+}
+.forms input
+{
+    background-color:#E7E7E7;
+    border-radius: 0%;
+    border: none;
+    width: 98%;
+}
+.forms select
+{
+    background-color:#E7E7E7;
+    border-radius: 0%;
+    border: none;
+    width: 98%;
+    height: 40px;
+    padding: 12px 12px;
+}
+.boton
+{
+    display: flex;
+    justify-content: end;
+}
+.boton button
+{
+    background-color: var(--fondo-resaltador);
+    border: none;
+    color: var(--fondo-blanco);
+    width: 160px;
+    height: 36px;
+    font-size: 1em;
+    font-weight:500;
+    padding: 12px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.envios .form .circulo
+{
+    background-color: var(--fondo-resaltador);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--fondo-resaltador);
+}
+.envios .form
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 0px 14px;
+}
+
+
+
+
+

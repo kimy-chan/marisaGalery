@@ -1,0 +1,54 @@
+<%- include('./partials/headerPanel',{ title,nombreUser, emailUser, apellidoUser, rolUser}) %>
+
+
+  <div class="container text-center">
+    <h3>Panel de Administración</h3>
+  </div>
+  <div class="container mt-5">
+    <div class="d-flex flex-wrap">
+      <a href="/products-panel" class="admin-link btn btn-light">
+        <i class="fas fa-box icon" style="color: #D09456;"></i> Productos
+        <span class="btn" style="background: #D09456; color: white;">
+          <%=products%>
+        </span>
+      </a>
+      <a href="/suscriptores" class="admin-link btn btn-light">
+        <i class="fas fa-user icon" style="color: #D09456;"></i> Suscriptores
+        <span class="btn" style="background: #D09456; color: white;">
+          <%= suscriptores %>
+        </span>
+      </a>
+      <a href="/ventas" class="admin-link btn btn-light">
+        <i class="fas fa-chart-line icon" style="color: #D09456;"></i> Ventas
+        <span class="btn" style="background: #D09456; color: white;">
+          <%= sales %>
+        </span>
+      </a>
+      <a href="/user" class="admin-link btn btn-light">
+        <i class="fas fa-users icon" style="color: #D09456;"></i> Administradores
+        <span class="btn" style="background: #D09456; color: white;">
+          <%= user %>
+        </span>
+      </a>
+      <a href="/category-panel" class="admin-link btn btn-light">
+        <i class="fas fa-list icon" style="color: #D09456;"></i> Categorías
+        <span class="btn" style="background: #D09456; color: white;">
+          <%=categories %>
+        </span>
+      </a>
+      <a href="/get-order" class="admin-link btn btn-light">
+        <i class="fas fa-shopping-cart icon" style="color: #D09456;"></i> Pedidos
+        <span class="btn" style="background: #D09456; color: white;">
+          <%= order %>
+        </span>
+      </a>
+      <!-- Puedes agregar más enlaces aquí si es necesario -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </body>
+
+  </html>

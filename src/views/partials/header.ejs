@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%=title %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style/nav.css">
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="/style/category.css">
+  <link rel="stylesheet" href="/style/cart.css">
+  <link rel="stylesheet" href="/style/pedidos.css">
+  <link rel="stylesheet" href="/style/descriptionProduct.css">
+  <link rel="stylesheet" href="/style/contactos.css">
+
+  <link rel="stylesheet" href="/style/footer.css">
+  <link rel="shotcut icon" type="img/logo" href="imagenes/img-login/icono fondo negro con blanco.svg">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <div class="socialmedia">
+    <div class="left">
+      <p>VISTE CON ORIGINALIDAD</p>
+    </div>
+    <div class="right">
+      <ul>
+        <li><i class="ri-facebook-circle-fill"></i></li>
+        <li><i class="ri-instagram-fill"></i></li>
+        <li><i class="ri-whatsapp-fill"></i></li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <nav class="navbar navbar-expand-lg bg-custom  ">
+
+    <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/index"><img src="/img/iconoM.svg" alt="LOGO"></a>
+      <ul class="navbar-nav mr-auto mt-2">
+        <li class="nav-item active">
+          <a class="nav-link  text-white" href="/index">Inicio <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categorias
+          </a>
+          <div class="dropdown-menu  bg-dark" aria-labelledby="navbarDropdownMenuLink">
+            <% if(categories.length> 0){%>
+              <% categories.forEach(item=>{%>
+                <a class="dropdown-item bg-dark text-white" href="/products/<%=item.nameCategory %>">
+                  <%=item.nameCategory %>
+                </a>
+
+                <%}) %>
+
+                  <%}else{%>
+                    <p>sin categorias</p>
+                    <% } %>
+
+
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" href="/nosotros">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-white" href="/contacto">Contactos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

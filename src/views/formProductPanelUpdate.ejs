@@ -1,0 +1,174 @@
+<%- include('./partials/headerPanel',{title, nombreUser, emailUser, apellidoUser, rolUser}) %>
+  <div class="container text-center">
+    <h3>Actulizar Producto</h3>
+  </div>
+  <br>
+  <div class="container">
+    <div class="containe">
+      <% if(mensaje){%>
+        <div class="alert alert-success" role="alert">
+
+          Producto actulizado
+        </div>
+        <% } %>
+
+
+
+
+
+    </div>
+    <form action="/update-product/<%=product[0].idProduct  %>" method="POST" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre del Producto:</label>
+            <input type="text" class="form-control" value="<%=product[0].nameProduct  %>" id="nombre" name="nombre"
+              required>
+            <% error.forEach(err=> { %>
+              <% if (err.path==='nombre' ) { %>
+                <span>
+                  <%= err.msg %>
+                </span>
+                <% } %>
+                  <% }); %>
+          </div>
+
+          <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad:</label>
+            <input type="number" class="form-control" value="<%=product[0].amount  %>" id="cantidad" name="cantidad"
+              required>
+            <% error.forEach(err=> { %>
+              <% if (err.path==='cantidad' ) { %>
+                <span>
+                  <%= err.msg %>
+                </span>
+                <% } %>
+                  <% }); %>
+          </div>
+
+          <div class="mb-3">
+            <label for="colores" class="form-label">Colores disponibles:</label>
+            <input type="text" class="form-control" value="<%=product[0].color  %>" id="colores" name="colores"
+              required>
+
+            <% error.forEach(err=> { %>
+              <% if (err.path==='colores' ) { %>
+                <span>
+                  <%= err.msg %>
+                </span>
+                <% } %>
+                  <% }); %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción:</label>
+            <textarea class="form-control" id="descripcion" name="descripcion"
+              required><%=product[0].description  %></textarea>
+            <% error.forEach(err=> { %>
+              <% if (err.path==='descripcion' ) { %>
+                <span>
+                  <%= err.msg %>
+                </span>
+                <% } %>
+                  <% }); %>
+          </div>
+
+          <div class="mb-3">
+            <label for="precio" class="form-label">Precio:</label>
+            <input type="number" step="0.01" value="<%=product[0].price  %>" class="form-control" id="precio"
+              name="precio" required>
+            <% error.forEach(err=> { %>
+              <% if (err.path==='precio' ) { %>
+                <span>
+                  <%= err.msg %>
+                </span>
+                <% } %>
+                  <% }); %>
+          </div>
+
+          <div class="mb-3">
+            <label for="tallas" class="form-label">Tallas disponibles:</label>
+            <input type="text" class="form-control" id="tallas" value="<%=product[0].size  %>" name="tallas">
+            <% error.forEach(err=> { %>
+              <% if (err.path==='tallas' ) { %>
+                <span>
+                  <%= err.msg %>
+                </span>
+                <% } %>
+                  <% }); %>
+          </div>
+
+        </div>
+        <div class="mb-6">
+          <label for="imagenes">Selecciona una o varias imágenes:</label>
+          <input type="file" id="imagenes" name="imagenes" multiple accept=".jpg, .jpeg, .JPG, .JPEG, .png">
+
+          <div class="container">
+
+            <%if(img.length> 0){%>
+              <% img.forEach(item=>{%> <img src="<%=item.image %>" alt="" width="100px">
+                <%}) %>
+                  <%}else{%> <span>sin imagen</span>
+                    <%} %>
+          </div>
+
+          <div id="imagenPreviews"></div>
+          <span>
+            <%= fileError %>
+          </span>
+          <% error.forEach(err=> { %>
+            <% if (err.path==='imagenes' ) { %>
+              <span>
+                <%= err.msg %>
+              </span>
+              <% } %>
+                <% }); %>
+
+
+        </div>
+        <br>
+      </div>
+
+      <div class="mb-3 form-check">
+
+        <input type="checkbox" class="form-check-input" value="1" name="destacado" <% if (product[0].outstanding==1) {
+          %>checked<% } %>>
+          <label class="form-check-label" for="destacado">Destacado</label>
+      </div>
+
+      <div class="mb-3">
+        <label for="categorias" class="form-label">Categorías:</label>
+        <select class="form-select" id="categorias" name="categorias" required>
+
+          <% if(categories.length> 0){%>
+            <option value="<%=categoriaP[0].idCategory %>">
+              <%=categoriaP[0].nombreCategoria %>
+            </option>
+
+            <%categories.forEach(item=>{%>
+              <option value="<%= item.idCategory %>">
+                <%=item.nameCategory %>
+              </option>
+
+              <%}) %>
+
+                <%}else{%>
+                  <option value="electronica">categorias vacia</option>
+                  <%} %>
+
+        </select>
+      </div>
+
+
+      <div style="text-align: center;">
+        <button type="submit" class="btn" style="background: #D09456; color: white;">Actulizar Producto</button>
+
+      </div>
+    </form>
+  </div>
+
+
+
+  <%- include('./partials/footerPanel') %>

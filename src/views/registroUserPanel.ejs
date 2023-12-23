@@ -1,0 +1,101 @@
+<%- include('./partials/headerPanel',{title, nombreUser, emailUser, apellidoUser, rolUser}) %>
+    <div class="container text-center">
+        <h3>Añadir Administrador</h3>
+    </div>
+    <div class="container">
+        <% if(alertMensaje==='existe' ){%>
+            <div class="alert alert-danger" role="alert">
+                <p>La cuenta ya se encuentra registrada</p>
+            </div>
+
+            <%}else if(alertMensaje==='registrado' ){%>
+                <div class="alert  alert-success" role="alert">
+                    <p>Administrador registrado</p>
+                </div>
+
+                <%} %>
+
+                    <form action="/register" method="POST">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" name="name"
+                                            value="<%=valuesBody ? valuesBody.name : '' %>"
+                                            placeholder="Ingrese su nombre" required>
+                                        <% errors.forEach(err=> { %>
+                                            <% if (err.path==='name' ) { %>
+                                                <span>
+                                                    <%= err.msg %>
+                                                </span>
+                                                <% } %>
+                                                    <% }); %>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="apellido">Apellidos</label>
+                                        <input type="text" class="form-control" name="lastNames"
+                                            value="<%=valuesBody?valuesBody.lastNames:''%>"
+                                            placeholder="Ingrese su apellido" required>
+                                        <% errors.forEach(err=> { %>
+                                            <% if (err.path==='lastNames' ) { %>
+                                                <span>
+                                                    <%= err.msg %>
+                                                </span>
+                                                <% } %>
+                                                    <% }); %>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="correo">Correo Electrónico</label>
+                                        <input type="email" class="form-control" name="email"
+                                            value="<%=valuesBody?valuesBody.email:''%>"
+                                            placeholder="Ingrese su correo electrónico" required>
+                                        <% errors.forEach(err=> { %>
+                                            <% if (err.path==='email' ) { %>
+                                                <span>
+                                                    <%= err.msg %>
+                                                </span>
+                                                <% } %>
+                                                    <% }); %>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="contrasena">Contraseña</label>
+                                        <input type="password" class="form-control" name="password"
+                                            placeholder="Ingrese su contraseña" required>
+                                        <% errors.forEach(err=> { %>
+                                            <% if (err.path==='password' ) { %>
+                                                <span>
+                                                    <%= err.msg %>
+                                                </span>
+                                                <% } %>
+                                                    <% }); %>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="rol">Rol</label>
+                                    <select class="form-control" name="role" required>
+                                        <option value="admin" <%if(valuesBody.role==="admin" ){ %>selected<% } %>
+                                                > Administrador
+                                        </option>
+                                        <option value="vendedor" <% if( valuesBody.role==='vendedor' ) { %>selected<% }
+                                                %>
+                                                >Vendedor</option>
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn"
+                                        style="background: #D09456; color: white;">Regístrarte</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+    </div>
+
+    <%- include('./partials/footerPanel') %>

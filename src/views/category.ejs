@@ -1,0 +1,64 @@
+<%- include('./partials/header',{categories:categories}) %>
+    <div class="container-fluid">
+
+        <div class="category">
+            <%category.forEach((item)=>{%>
+                <div class="productos">
+                    <a href="/Products/<%=item.nameCategory%>">
+                        <h2>
+                            <%=item.nameCategory%>
+                        </h2>
+                    </a>
+                </div>
+                <%})%>
+
+        </div>
+
+        <div class="row columna">
+            <% if (product.length>= 1) { %>
+                <% product.forEach(items=> { %>
+                    <div class="col-sm-6 col-md-4 mx-auto">
+                        <div class="card targeta">
+                            <a href="/decription/<%=items.idProduct  %>"><img class="imagen" src="<%=items.image%>"
+                                    alt="<%=items.nameProduct%>"></a>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%=items.nameProduct%>
+                                        <%=items.color %>
+                                </h5>
+                                <div class="star">
+                                    <ul>
+                                        <li><i class="ri-star-fill"></i></li>
+                                        <li><i class="ri-star-fill"></i></li>
+                                        <li><i class="ri-star-fill"></i></li>
+                                        <li><i class="ri-star-line"></i></li>
+                                        <li><i class="ri-star-line"></i></li>
+                                    </ul>
+                                </div>
+                                <h5 class="card-title">Bs.<%=items.price%>
+                                </h5>
+                                <div class="boton">
+                                    <a href="/decription/<%=items.idProduct  %>">
+                                        VER MAS
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <div style="display: flex; justify-content: center; align-items: center; height: 250px;">
+                                <div class="alert alert-warning" role="alert">
+                                    Categoria vacia
+                                </div>
+                            </div>
+                            <% } %>
+        </div>
+    </div>
+    <div class="linea"></div>
+
+
+
+
+
+    <%- include('./partials/footer') %>

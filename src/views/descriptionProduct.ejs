@@ -1,0 +1,56 @@
+<%- include('./partials/header') %>
+  <div class="container .container-des mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner con">
+
+            <% product.forEach((item, index)=>{%>
+              <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                <img src="<%=item.image%>" alt="First slide" style="object-fit: cover; ">
+              </div>
+              <%}) %>
+          </div>
+
+
+
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6 pt-4">
+        <h2>
+          <%= product[0].nameProduct %>
+        </h2>
+        <p>
+          <%= product[0].description %>
+        </p>
+        <div class="kontrolDeForma">
+          <p><b>Color:</b>
+            <%= product[0].color %>
+          </p>
+          <% if (product[0].size) { %>
+            <p><b>Talla:</b>
+              <%= product[0].size %>
+            </p>
+            <% } %>
+              <p><b>Precio:</b>
+                <%= parseFloat(product[0].price) %> bs
+              </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="linea"></div>
+
+
+
+  <%- include('./partials/footer') %>

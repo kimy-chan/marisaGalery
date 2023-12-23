@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/register.css">
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/css/bootstrap.min.css">
+  <link rel="shotcut icon" type="img/logo" href="imagenes/img-login/icono fondo negro con blanco.svg">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--
+    aqui ira el navegador 
+  -->
+  <div class="back">
+    <a href="/">
+      <i class="ri-arrow-left-line"></i>
+      Volver</a>
+  </div>
+  <div class="linea"></div>
+  <div class="container">
+    <div class="logo">
+      <img src="./img/dorado.svg" alt="">
+    </div>
+    <h1>Crea tu cuenta</h1>
+    <p>Bienvenid@, accede rápido y fácil.</p>
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="name" value="<%=valuesBody ? valuesBody.name : '' %>" placeholder="Ingrese su nombre"
+          required>
+
+      </div>
+      <% errors.forEach(err=> { %>
+        <% if (err.path==='name' ) { %>
+          <span style="font-size: 10px;">
+            <%= err.msg %>
+          </span>
+          <% } %>
+            <% }); %>
+
+              <div class="form-group">
+                <label for="apellido">Apellidos</label>
+                <input type="text" name="lastNames" value="<%=valuesBody?valuesBody.lastNames:''%>"
+                  placeholder=" Ingrese su apellido" required>
+
+              </div>
+              <% errors.forEach(err=> { %>
+                <% if (err.path==='lastNames' ) { %>
+                  <span style="font-size: 10px;">
+                    <%= err.msg %>
+                  </span>
+                  <% } %>
+                    <% }); %>
+                      <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" name="email" value="<%=valuesBody?valuesBody.email:''%>"
+                          placeholder="Ingrese su correo electrónico" required>
+
+
+                      </div>
+                      <% errors.forEach(err=> { %>
+                        <% if (err.path==='email' ) { %>
+                          <span style="font-size: 10px;">
+                            <%= err.msg %>
+                          </span>
+                          <% } %>
+                            <% }); %>
+                              <div class="form-group">
+                                <label for="contrasena">Contraseña</label>
+                                <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+
+                              </div>
+
+
+
+
+
+
+                              <button type="submit">Regístrarte</button>
+    </form>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

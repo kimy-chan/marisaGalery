@@ -1,0 +1,79 @@
+<%- include('./partials/headerPanel',{title, nombreUser, emailUser, apellidoUser, rolUser}) %>
+
+    <div class="container text-center">
+        <h3>Actualizar Categoría</h3>
+    </div>
+    <br>
+    <form id="categoriaForm" action="/update-category/<%= categoriasId[0].idCategory %>" method="post"
+        enctype="multipart/form-data">
+        <div class="container">
+            <% if(mensaje){%>
+                <div class="alert alert-success" role="alert">
+
+                    Categoria actualizada
+                </div>
+
+                <%} %>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nombreCategoria">Nombre de la Categoría</label>
+                                <input type="text" value="<%= categoriasId[0].nameCategory  %>" class="form-control"
+                                    name="categoria" required>
+                                <% error.forEach(err=> { %>
+                                    <% if (err.path==='categoria' ) { %>
+                                        <span>
+                                            <%= err.msg %>
+                                        </span>
+                                        <% } %>
+                                            <% }); %>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fotoCategoria">Foto de la Categoría</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="fotoCategoria" name="images"
+                                        accept="image/*">
+                                    <label class="custom-file-label" for="fotoCategoria">Seleccionar archivo...</label>
+
+                                </div>
+                                <span>
+                                    <%= fileError %>
+                                </span>
+                                <% error.forEach(err=> { %>
+                                    <% if (err.path==='image' ) { %>
+                                        <span>
+                                            <%= err.msg %>
+                                        </span>
+                                        <% } %>
+                                            <% }); %>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Espacio para mostrar la imagen de la categoría actual -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Imagen actual de la Categoría</label>
+                                <img src="<%=categoriasId[0].image  %>" width="100px" alt="Imagen Actual"
+                                    id="imagenCategoria" class="img-thumbnail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <button class="btn" style="background: #D09456; color: white;">Actualizar Categoría</button>
+                        </div>
+                    </div>
+        </div>
+    </form>
+
+
+
+    </div>
+
+    <%- include('./partials/footerPanel') %>

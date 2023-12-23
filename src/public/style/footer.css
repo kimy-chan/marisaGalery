@@ -1,0 +1,130 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root
+{
+    --fondo-blanco:#fff;
+    --fondo-negro:#0f0f0b;
+    --fondo-gris-b:#919191;
+    --fondo-gris-a:#AAAAAA;
+    --fondo-rosa:#FBEBD2;
+    --fondo-resaltador:#D09456;
+    --fondo-resaltador2:#FADBC8;
+}
+
+
+.footer {
+    background-color: var(--fondo-negro);
+    width: 100%;
+    color: var(--fondo-blanco);
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 28px;
+}
+
+footer .copy
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .row .logo
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.footer .row img
+{
+    width: 40%;
+    height: auto;
+    z-index: 1;
+    margin-right: 0;
+}
+.footer .row .list-unstyled
+{
+    line-height: 30px;
+}
+.footer .row .list-unstyled li a
+{
+    text-decoration: none;
+    color: var(--fondo-blanco);
+    list-style:none;
+}
+.footer .row .list-unstyled li a:hover
+{
+    transition: ease all 0.1s;
+    color: var(--fondo-resaltador);
+    cursor: pointer;
+}
+
+.footer .row .social_media2
+{
+    display: flex;
+    height: 30px;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 22px;
+    top: 0;
+}
+.footer .row .social_media2 .right
+{
+    width: 100%;
+    height: 46px;
+    margin-top: 1.5%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.footer .row .social_media2 .right ul
+{
+    list-style: none;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    gap: 12px;
+   
+}
+.footer .row .social_media2 .right ul li
+{
+    list-style: none;
+    text-decoration: none;
+}
+.footer .row .social_media2 .right ul li i
+{
+    font-size: 1.2em;
+    color: var(--fondo-resaltador);
+   
+}
+
+/*HOVER NAV-1*/
+.footer .row .social_media2 .right ul li i:hover
+{
+    transition: ease all 0.1s;
+    color: var(--fondo-blanco);
+    text-shadow:0 0 2px var(--fondo-resaltador2);
+    cursor: pointer;
+}
+
+.footer .row a
+{
+    list-style: none;
+    text-decoration: none;
+    border: none;
+}
+.footer .row a i
+{
+    font-size: 2em;
+    color: var(--fondo-blanco);
+}

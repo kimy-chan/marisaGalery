@@ -1,0 +1,108 @@
+<%- include('./partials/headerPanel',{title, nombreUser, emailUser, apellidoUser, rolUser}) %>
+  <div class="container mt-5">
+
+    <%if(mensaje) {%>
+      <div class="alert alert-danger" role="alert">
+        <%=mensaje%>
+      </div>
+      <% } %>
+
+        <% if(categoriaMsg) {%>
+          <div class="alert alert-success" role="alert">
+            Categoria añadida
+          </div>
+          <%}%>
+            <%if(categoriaDeleteMsg) {%>
+              <div class="alert alert-danger" role="alert">
+                Categoria eliminada
+              </div>
+              <% } %>
+                <%if(categoriaDuplicada) {%>
+                  <div class="alert alert-danger" role="alert">
+                    La categoria ya existe
+                  </div>
+                  <% } %>
+
+
+                    <br>
+                    <form id="categoriaForm" action="/add-category" method="post" enctype="multipart/form-data">
+                      <div class="form-row">
+                        <div class="form-group col-md-4">
+                          <label for="nombreCategoria">Nombre de la Categoría</label>
+                          <input type="text" class="form-control" name="categoria" value="<%=valuesbody.categoria%>"
+                            required>
+                          <% error.forEach(err=> { %>
+                            <% if (err.path==='categoria' ) { %>
+                              <span>
+                                <%= err.msg %>
+                              </span>
+                              <% } %>
+                                <% }); %>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="fotoCategoria">Foto de la Categoría</label>
+                          <input type="file" class="form-control-file" name="images" accept="image/*" required>
+                          <% error.forEach(err=> { %>
+                            <% if (err.path==='image' ) { %>
+                              <span>
+                                <%= err.msg %>
+                              </span>
+                              <% } %>
+                                <% }); %>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <button class="btn" style="background: #D09456; color: white;">Agregar Categoría</button>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="container text-center">
+                      <h3>Categorias</h3>
+                    </div>
+                    <br>
+
+                    <% if (categories.length> 0) { %>
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th>Nombre de la Categoría</th>
+                              <th>Foto de la Categoría</th>
+                              <th>Acciones</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+
+                            <% categories.forEach(item=> { %>
+                              <tr>
+                                <td>
+                                  <%= item.nameCategory %>
+                                </td>
+                                <td><img src="<%= item.image %>" alt="Category" width="50"></td>
+                                <td> <a href="/update-category/<%=item.idCategory  %>"><i class="fas fa-edit"
+                                      style="color: #D09456; "></i></a>
+
+                                  <% if(rolUser==='admin' ){%>
+                                    <a
+                                      onclick="deleteCategory('<%=item.idCategory%>','<%=item.nameCategory%>','<%=item.imageId%>')">
+                                      <i class="fas fa-trash-alt text-danger"></i></a>
+
+                                    <%} %>
+
+                                </td>
+                                </td>
+                              </tr>
+                              <% }); %>
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <% } else { %>
+                        <div class="alert alert-secondary" role="alert">
+                          Categoria vacias
+                        </div>
+                        <% } %>
+  </div>
+
+  <%- include('./partials/footerPanel') %>

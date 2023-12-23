@@ -1,0 +1,188 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root
+{
+    --fondo-blanco:#fff;
+    --fondo-negro:#0f0f0b;
+    --fondo-gris-b:#919191;
+    --fondo-gris-a:#AAAAAA;
+    --fondo-rosa:#FBEBD2;
+    --fondo-resaltador:#D09456;
+    --fondo-resaltador2:#FADBC8;
+}
+
+
+.linea
+{
+    width: 100%;
+    height: 10px;
+}
+.back
+{
+    width: 80px;
+    height: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin:12px 18px ;
+    padding: 3px 3px;
+    cursor: pointer;
+    animation: fundido 2s linear forwards, movimiento 6s linear infinite;
+    animation-delay: 1s;
+    border: 1px solid var(--fondo-resaltador);
+}
+.back a
+{
+    color: var(--fondo-resaltador);
+    font-size: 0.9em;
+    text-decoration: none;
+    list-style: none;
+}
+.back i
+{
+    color: var(--fondo-resaltador);
+    font-size: 1em;
+}
+.back:hover
+{
+    color: var(--fondo-resaltador);
+    border: 1px solid var(--fondo-resaltador);
+    transition: 0.2s;
+}
+.container-des{
+    width: 100%;
+    height: 480px;
+}
+.col-md-6 
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -2%;
+}
+.container .col-md-6 img
+{
+    width: 100%;
+    height: 500px;
+}
+.col-md-6 p
+{
+    text-align: justify;
+}
+.col-md-6 button
+{
+    background-color: var(--fondo-resaltador);
+    color: var(--fondo-blanco);
+    font-size: 0.9em;
+    width: 140px;
+    height: auto;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+.col-md-6 button i
+{
+    font-size: 1em;
+}
+/*HOVER category-2*/
+.col-md-6 button:hover
+{
+    background-color: var(--fondo-blanco);
+    color: var(--fondo-resaltador);
+    border: 2px solid var(--fondo-resaltador);
+    transition: 0.4s;
+}
+
+.col-md-6 .kontrolDeForma
+{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0px 30px;
+}
+.col-md-6 .kontrolDeForma select
+{
+    background-color: var(--fondo-blanco);
+    color: var(--fondo-resaltador);
+    border: 4px solid var(--fondo-resaltador);
+    font-size: 1em;
+    width: 200px;
+    height: auto;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+.col-md-6 .kontrolDeForma input
+{
+    width: 45px;
+    height: auto;
+    cursor: pointer;
+    z-index: 1;
+    color: var(--fondo-resaltador);
+}
+.col-md-6 .kontrolDeForma label
+{
+    width: 45px;
+    height: auto;
+    background-color: var(--fondo-blanco);
+    color: var(--fondo-resaltador);
+    border: 2px solid var(--fondo-resaltador);
+    font-size: 1em;
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.footer-d
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+}
+.footer-d .linearecta
+{
+    width: 2px;
+    height: 40px;
+    background-color: var(--fondo-resaltador);
+}
+.social_media
+{
+    width: 8%;
+    height: 46px;
+    margin-top: 1.5%;
+}
+.social_media ul
+{
+    list-style: none;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    gap: 12px;
+}
+.social_media ul li i
+{
+    font-size: 1.2em;
+    color: var(--fondo-resaltador);
+}
+
+/*HOVER NAV-1*/
+.social_media ul li i:hover
+{
+    transition: ease all 0.1s;
+    color: #0f0f0b;
+    text-shadow:0 0 6px var(--fondo-resaltador2);
+    cursor: pointer;
+    text-decoration-color:rgba(255, 255, 255, 0.2); ;
+}
+

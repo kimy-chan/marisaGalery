@@ -1,0 +1,146 @@
+<%- include('./partials/header', title) %>
+  <div class="container mt-4 contenedor">
+    <div class="title">
+      <div class="carrito">
+        <i class="ri-shopping-cart-line"></i>
+      </div>
+      <br><br>
+      <h1>Datos de Compra</h1>
+    </div>
+
+    <form action="/pedido" method="post">
+      <div class="form-row forms">
+        <div class="form-group col-md-6 form">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" value="<%= val.nombre %>" required>
+          <% error.forEach(err=> { %>
+            <% if (err.path==='nombre' ) { %>
+              <span>
+                <%= err.msg %>
+              </span>
+              <% } %>
+                <% }); %>
+        </div>
+        <div class="form-group col-md-6 form">
+          <label for="apellidos">Apellidos:</label>
+          <input type="text" class="form-control" id="apellidos" name="apellidos" value="<%= val.apellidos %>" required>
+          <% error.forEach(err=> { %>
+            <% if (err.path==='apellidos' ) { %>
+              <span>
+                <%= err.msg %>
+              </span>
+              <% } %>
+                <% }); %>
+        </div>
+      </div>
+      <div class="form-row forms">
+        <div class="form-group col-md-6 form">
+          <label for="celular">Celular:</label>
+          <input type="text" class="form-control" name="celular" value="<%= val.celular %>" required>
+          <% error.forEach(err=> { %>
+            <% if (err.path==='celular' ) { %>
+              <span>
+                <%= err.msg %>
+              </span>
+              <% } %>
+                <% }); %>
+        </div>
+        <div class="form-group col-md-6 form">
+          <label for="apellidos">Ciudad:</label>
+          <input type="text" class="form-control" name="Ciudad" value="<%= val.Ciudad %>" required>
+          <% error.forEach(err=> { %>
+            <% if (err.path==='Ciudad' ) { %>
+              <span>
+                <%= err.msg %>
+              </span>
+              <% } %>
+                <% }); %>
+        </div>
+      </div>
+      <div class="form-group forms">
+        <label for="direccion" class="form">Dirección N°:</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" value="<%= val.direccion%>"
+          placeholder="Ejemplo german bush N° 8" required>
+        <% error.forEach(err=> { %>
+          <% if (err.path==='direccion' ) { %>
+            <span class="form">
+              <%= err.msg %>
+            </span>
+            <% } %>
+              <% }); %>
+      </div>
+
+      <div class="form-group forms">
+        <label for="productos" class="form">Productos:</label>
+        <div class="d-flex flex-row flex-wrap">
+          <% products.forEach(item=> { %>
+            <div class="card mb-3 mr-3 border-0" style="max-width: 300px;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="<%= item.image %>" class="card-img" alt="<%= item.nameProduct %>">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= item.nameProduct %>
+                    </h5>
+                    <p class="card-text">Cantidad: <%= item.cantidad %>
+                        <p class="card-text">Precio: <%= parseFloat(item.price).toFixed(2) %>
+                        </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </div>
+      </div>
+
+      <div class="sumatoria">
+        <div class="form">
+
+          <p class="total">TOTAL: <%=totalPrice %>
+          </p>
+        </div>
+      </div>
+      <h5 class="total">Envío</h5>
+      <div class="form-row forms envios">
+        <div class="form-group col-md-6 form">
+          <label for="Recoger">Delivery <br> (Cargo adicional de Bs 10,00)</label>
+          <input class="circulo" type="checkbox" <% if (val.recoger !=='on' ) { %>checked<% } %> name="entrega"
+            id="Recoger">
+        </div>
+        <div class="form-group col-md-6 form">
+          <label for="Entrega">Recoger <br> en tienda</label>
+          <input class="circulo" type="checkbox" <% if (val.recoger==='on' ) { %>checked<% } %>
+            name="recoger"id="Entrega">
+        </div>
+      </div>
+      <div class="boton">
+        <button type="submit ">Finalizar compra</button>
+      </div>
+
+    </form>
+  </div>
+  <div class="linea"></div>
+
+
+  <script>
+    const checkboxRecoger = document.getElementById("Recoger");
+    const checkboxEntrega = document.getElementById("Entrega");
+
+    checkboxEntrega.addEventListener('change', () => {
+      if (checkboxEntrega.checked) {
+        checkboxRecoger.checked = false;
+      }
+    });
+
+    checkboxRecoger.addEventListener('change', () => {
+      if (checkboxRecoger.checked) {
+        checkboxEntrega.checked = false;
+      }
+    });
+
+
+  </script>
+
+  <%- include('./partials/footer') %>

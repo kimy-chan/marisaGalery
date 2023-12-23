@@ -1,0 +1,159 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root
+{
+    --fondo-blanco:#fff;
+    --fondo-negro:#0f0f0b;
+    --fondo-gris-b:#919191;
+    --fondo-gris-a:#AAAAAA;
+    --fondo-rosa:#FBEBD2;
+    --fondo-resaltador:#D09456;
+    --fondo-resaltador2:#FADBC8;
+}
+
+
+.socialmedia
+{
+    display: flex;
+    height: 30px;
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 22px;
+    top: 0;
+}
+.socialmedia .left
+{
+    display: flex;
+    align-items: center;
+    height: 46px;
+    padding: 8px 0px;
+    margin-top: 1.5%;
+    font-weight:550;
+    color: var(--fondo-resaltador);
+}
+.socialmedia .right
+{
+    width: 20%;
+    height: 46px;
+    margin-top: 1.5%;
+}
+.socialmedia .right ul
+{
+    list-style: none;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    gap: 12px;
+}
+.socialmedia .right ul li i
+{
+    font-size: 1.2em;
+    color: var(--fondo-resaltador);
+}
+
+/*HOVER NAV-1*/
+.social_media .right ul li i:hover
+{
+    transition: ease all 0.1s;
+    color: #0f0f0b;
+    text-shadow:0 0 6px var(--fondo-resaltador2);
+    cursor: pointer;
+    text-decoration-color:rgba(255, 255, 255, 0.2); ;
+}
+
+
+nav img
+{
+    width: 50px;
+    height: auto;
+}
+
+.navbar-nav
+{
+    width: 50%;
+    justify-content:space-between;
+  
+}
+
+
+ .navbar-nav li a
+{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+
+
+
+nav .collapse .nav-items
+{
+    width: 15%;
+    height: 60px;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
+
+nav .collapse .nav-item li
+{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    padding: 8px 8px;
+    list-style:none;
+    text-decoration: none;
+}
+.nav-item li a i
+{
+    font-size: 1.3em;
+    color: var(--fondo-blanco);
+    list-style:none;
+    text-decoration: none;
+
+}
+
+
+.bg-custom {
+    background-color: black; 
+}
+
+
+.colorLink {
+    color: #ffffff; 
+}
+
+
+
+/* css del icono del carrito*/
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cantidad {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 12px;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
