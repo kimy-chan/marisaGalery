@@ -63,7 +63,7 @@ class Server {
     this.app.use(routerContacto)
     this.app.use(routerSuscriptor)
     this.app.use((req, res) => {
-      return res.send("pagina no encotrada")
+      return res.status(404).json({ mensaje: "Pagina no encontrada" })
 
     })
 

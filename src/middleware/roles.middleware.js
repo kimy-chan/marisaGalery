@@ -4,7 +4,7 @@ function rolesUser(req, res, next) {
     if (roles === 'admin' || roles === 'vendedor') {
         return next()
     }
-    return res.rediret("/login")
+    return res.redirect("/login")
 
 
 }

@@ -270,5 +270,11 @@ create view Suscriptos as select Person.idPerson, Person.firstName, Person.lastN
 
  create view SalesProduct as select Person.idPerson, Person.firstName, Person.lastName, Person.motherLastname,  DATE_FORMAT(Sales.saleDate, '%d/%b/%y') AS FechaCompleta, DATE_FORMAT(Sales.saleDate, '%H:%i:%s') AS Hora, Product.nameProduct,Product.color,ProductDetail.amount, ProductDetail.total, Product.size    from Person inner join OrderCustomer on Person.idPerson = OrderCustomer.idPerson 
 inner join Sales on OrderCustomer.idOrder = Sales.idOrder inner join ProductDetail on OrderCustomer.idOrder = ProductDetail.idOrder
-inner join Product on ProductDetail.idProduct=Product.idProduct
+inner join Product on ProductDetail.idProduct=Product.idProduct;
+
+
+
+insert into Person(firstName, lastName, motherLastName, dateRegister) value("Test","Test","Test",now());
+insert into User(email, password, idPerson)values("test_@gmail.com", "$2b$10$ybBamSx.JCTDleOieuHXd.qIjTQYs2B71rlD2n1DQBMF6ra54xviS", 1);
+insert into role(nameRole, idUser) values("admin", 1)
  
