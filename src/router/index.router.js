@@ -6,7 +6,6 @@ const router = express.Router();
 router.get("/index", indexController.index);//plantilla principal
 
 router.get("/", indexController.portadaIndex); //portada de la tienda
-router.get("/cant-cart", indexController.cartCantidad); //cantidad del carrito
 
 
 // footer ritas

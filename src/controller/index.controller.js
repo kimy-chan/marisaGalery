@@ -15,16 +15,6 @@ class IndexController {
     }
   }
 
-  cartCantidad(req, res) {// muestra la cantidad del carrito
-    let cantidaCart;
-    if (Array.isArray(req.session.idProduct)) {
-      cantidaCart = req.session.idProduct;
-    } else {
-      cantidaCart = 0;
-    }
-    return res.json({ cantidaCart: cantidaCart });
-  }
-
   portadaIndex(req, res) {//portda 
     return res.render("portada")
   }

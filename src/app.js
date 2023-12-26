@@ -8,7 +8,6 @@ const cookieParser = require("cookie-parser");
 const getConecction = require("../src/model/db/db");
 const routerProduct = require("./router/product.router");
 const routerCategory = require("./router/category.router");
-const routerCart = require("./router/cart.router");
 const routerIndex = require("./router/index.router");
 const routerPanel = require("./router/panel.router");
 const routerPedidos = require("./router/Pedidos.router");
@@ -56,7 +55,6 @@ class Server {
     this.app.use(routerProduct);
     this.app.use(routerUser);
     this.app.use(routerCategory);
-    this.app.use(routerCart);
     this.app.use(routerIndex);
     this.app.use(routerPanel);
     this.app.use(routerPedidos)
