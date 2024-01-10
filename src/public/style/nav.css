@@ -5,16 +5,6 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-:root
-{
-    --fondo-blanco:#fff;
-    --fondo-negro:#0f0f0b;
-    --fondo-gris-b:#919191;
-    --fondo-gris-a:#AAAAAA;
-    --fondo-rosa:#FBEBD2;
-    --fondo-resaltador:#D09456;
-    --fondo-resaltador2:#FADBC8;
-}
 
 
 .socialmedia
@@ -43,6 +33,16 @@
     height: 46px;
     margin-top: 1.5%;
 }
+
+    @media (max-width:740px){
+    .socialmedia{
+    margin-top: 10px;
+    padding: auto;
+    box-sizing: border-box;
+            
+        }
+
+        }
 .socialmedia .right ul
 {
     list-style: none;
@@ -122,7 +122,7 @@ nav .collapse .nav-item li
 
 
 .bg-custom {
-    background-color: black; 
+    background-color:#ce798e;
 }
 
 

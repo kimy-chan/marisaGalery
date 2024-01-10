@@ -1,4 +1,21 @@
 <%- include('./partials/header',{title,categories:categories}) %>
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Tienda MarIsa</h5>
+          <button type="button" style="border-radius: 50%; background-color:#ce798e; border: none; width: 22px;"
+            data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></button>
+        </div>
+        <div class="modal-body mod ">
+          <img src="/img/presentacion.jpg" alt="">
+
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Carrusel de imágenes -->
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -26,9 +43,8 @@
     <div class="subtitle">
       <h2>Productos destacados</h2>
     </div>
-
-
     <div class="row column">
+
       <% if(product.length> 0){%>
         <% product.forEach(item=>{%>
           <div class="col-sm-6 col-md-4">
@@ -48,20 +64,7 @@
               </div>
             </div>
           </div>
-          <%}) %>
-
-
-
-            <% }else{%>
-              <div class="alert alert-warning" role="alert">
-                destacados no disponibles
-              </div>
-
-              <%}%>
-
-
-
-
+          <%}) }%>
 
     </div>
   </div>
@@ -107,7 +110,8 @@
     <div class="row">
       <div class="subtitle"></div>
       <div class="col-md-6 info-row">
-        <img src="./img/NOMBRE DE MARISA.png" alt="logo marisa">
+        <img src="./img/logoMarisa.svg" alt="logo marisa">
+        <br>
         <p>Marisa, una joven creativa con un ojo para la moda y un corazón apasionado por las tradiciones, creció en un
           pueblo
           donde cada ocasión especial estaba marcada por hermosos atuendos tradicionales. Desde temprana edad, quedó
@@ -123,6 +127,12 @@
   </div>
   <br><br>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+      myModal.show();
+    });
+  </script>
 
 
 

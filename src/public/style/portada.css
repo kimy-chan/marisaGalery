@@ -6,8 +6,8 @@
 }
 
 :root {
-    --fondo-blanco: #fff;
-    --fondo-negro: #0f0f0b;
+    --fondo-blanco: #ce798e;
+    --fondo-negro:white;
     --fondo-gris-b: #919191;
     --fondo-gris-a: #AAAAAA;
     --fondo-rosa: #FBEBD2;
@@ -34,7 +34,7 @@
 
 .portada-img .imagenlogo img 
 {
-    width: 60%;
+    width: 40%;
     height: auto;
     opacity: 0;
     animation: fundido 1s linear forwards, movimiento 6s linear infinite;

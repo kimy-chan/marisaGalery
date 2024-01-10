@@ -24,7 +24,7 @@
 
     </div>
     <div class="d-flex justify-content-end mb-3">
-      <a href="/add-product" class="btn" style="background: #D09456; color: white;"><i class="fas fa-plus"></i>
+      <a href="/add-product" class="btn" style="background: #222953; color: white;"><i class="fas fa-plus"></i>
         Agregar Nuevo Producto</a>
     </div>
     <div class="table-responsive">
@@ -75,7 +75,7 @@
 
                 <td><img src="<%=item.image%>" width="50px" alt=""></td>
                 <td><a href="/update-product/<%=item.idProduct %>"><i class="fas fa-edit"
-                      style="color: #D09456;"></i></a>
+                      style="color: #222953;"></i></a>
                   <% if(rolUser==='admin' ){%>
                     <a onclick="deleteProduct('<%=item.idProduct %>','<%=item.nameProduct %>')"><i
                         class="fas fa-trash-alt text-danger"></i></a>

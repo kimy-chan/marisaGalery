@@ -8,11 +8,11 @@
 :root
 {
     --fondo-blanco:#fff;
-    --fondo-negro:#0f0f0b;
+    --fondo-negro: #ce798e;
     --fondo-gris-b:#919191;
     --fondo-gris-a:#AAAAAA;
-    --fondo-rosa:#FBEBD2;
-    --fondo-resaltador:#D09456;
+    --fondo-rosa: #F7E8E9;
+    --fondo-resaltador:#222953;
     --fondo-resaltador2:#FADBC8;
 }
 .contenedor
