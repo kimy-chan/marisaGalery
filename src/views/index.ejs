@@ -5,9 +5,8 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Tienda MarIsa</h5>
-          <button type="button" style="border-radius: 50%; background-color:#ce798e; border: none; width: 22px;"
-            data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill"></i></button>
+          <h5 class="modal-title titulos" id="staticBackdropLabel">Tienda MarIsa</h5>
+          <button type="button" class="modalBtn" data-bs-dismiss="modal"><i class="ri-close-circle-fill"></i></button>
         </div>
         <div class="modal-body mod ">
           <img src="/img/presentacion.jpg" alt="">
@@ -41,7 +40,7 @@
 
   <div class="container-fluid count">
     <div class="subtitle">
-      <h2>Productos destacados</h2>
+      <h2 class="titulos">Productos destacados</h2>
     </div>
     <div class="row column">
 
@@ -53,7 +52,7 @@
               <div class="card-body">
                 <div class="text">
 
-                  <h5>
+                  <h5 class="titulos">
                     <%= item.nameProduct%> -
                       <%= item.color %>
                   </h5>
@@ -72,7 +71,7 @@
   <!---categorias-->
   <div class="container-fluid">
     <div class="subtitle">
-      <h2>Categorias</h2>
+      <h2 class="titulos">Categorias</h2>
     </div>
     <div class="row">
       <%if(categories.length> 0) {%>
@@ -86,7 +85,7 @@
               </div>
             </div>
             <div class="subtitle2">
-              <p>
+              <p class="titulos">
                 <%=item.nameCategory %>
               </p>
             </div>

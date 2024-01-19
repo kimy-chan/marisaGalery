@@ -22,6 +22,7 @@
     width: 100%;
     height: 100vh;
     background-color: var(--fondo-negro);
+    flex-direction: column;
 }
 
 .portada-img .imagenlogo
@@ -34,7 +35,7 @@
 
 .portada-img .imagenlogo img 
 {
-    width: 40%;
+    width: 80%;
     height: auto;
     opacity: 0;
     animation: fundido 1s linear forwards, movimiento 6s linear infinite;
@@ -69,7 +70,7 @@
     width: 100%;
     height: 100%;
     transform-origin: top;
-    animation: abre 2s ease-in-out forwards;
+    animation: abre 1.8s ease-in-out forwards;
 }
 
 .abre .capa:nth-child(1) {
@@ -88,14 +89,65 @@
     }
 }
 
+.arrow{
+    width: 100%;
+    height: 20%;
+    margin-top: -10%;
+    display: flex;
+    align-items: flex-end;
+    justify-content:end;
+    padding: 30px 30px;
+    box-sizing: border-box;
+}
+.arrow a{
+    width: 10%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.arrow i{
+    border: none;
+    list-style: none;
+    width: 400px;
+    font-size: 2em;
+    color: #222953;
+}
+
+
+
+.arrow a p:hover{
+    text-decoration: underline;
+    color: #ce798e;
+
+}
+
+
 @media (max-width:740px) 
 {
-    .portada-img a
-    {
-      margin-top: -35%;
-    }
     .portada-img .imagenlogo img 
-    {
-    width: 80%; 
+    { 
+    width: 95%; 
+    }
+     .portada-img{
+        width: 100%;
+        height: 100vh;
+        margin-top: -12%;
+       
+     
+
+     }
+    .imagenlogo{
+     width: 100%;
+     height: 100%;   
+    }
+  
+  
+    .arrow {
+        float: right;
+        margin-top: -40%;
+        padding: 40px 40px;
+        height: 40px;
+        width: 100%;
     }
 }

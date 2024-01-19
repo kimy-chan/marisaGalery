@@ -15,8 +15,10 @@
   <link rel="stylesheet" href="/style/pedidos.css">
   <link rel="stylesheet" href="/style/descriptionProduct.css">
   <link rel="stylesheet" href="/style/contactos.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="/style/footer.css">
+  <link rel="stylesheet" href="/style/tipografias.css">
+
   <link rel="shotcut icon" type="img/logo" href="imagenes/img-login/icono fondo negro con blanco.svg">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
@@ -27,7 +29,7 @@
 
   <div class="socialmedia">
     <div class="left">
-      <p>VISTE CON ORIGINALIDAD</p>
+      <p class="titulos">VISTE CON ORIGINALIDAD</p>
     </div>
     <div class="right">
       <ul>
@@ -52,17 +54,17 @@
       <a class="navbar-brand" href="/index"><img src="/img/newIcon.svg" alt="LOGO"></a>
       <ul class="navbar-nav mr-auto mt-2">
         <li class="nav-item active">
-          <a class="nav-link  text-white" href="/index">Inicio <span class="sr-only"></span></a>
+          <a class="nav-link  text-white titulos" href="/index">Inicio <span class="sr-only"></span></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle  text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle  text-white titulos" href="#" id="navbarDropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categorias
           </a>
           <div class="dropdown-menu " style="background: #D68B8F;" aria-labelledby="navbarDropdownMenuLink">
             <% if(categories.length> 0){%>
               <% categories.forEach(item=>{%>
-                <a class="dropdown-item text-white" style="background-color: #D68B8F;"
+                <a class="dropdown-item text-white titulos" style="background-color: #D68B8F;"
                   href="/products/<%=item.nameCategory %>">
                   <%=item.nameCategory %>
                 </a>
@@ -77,10 +79,10 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link  text-white" href="/nosotros">Nosotros</a>
+          <a class="nav-link  text-white titulos" href="/nosotros">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  text-white" href="/contacto">Contactos</a>
+          <a class="nav-link  text-white titulos" href="/contacto">Contactos</a>
         </li>
       </ul>
     </div>

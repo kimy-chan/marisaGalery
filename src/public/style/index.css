@@ -62,8 +62,8 @@
 .container-fluid .row .col-sm-6 .card 
 {
     background-color:var(--fondo-blanco);
-    width: 80%;
-    height: 380px;
+    width: 85%;
+    height: 390px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +103,7 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    margin-bottom: -8%;
+
 }
 .row .col-sm-6 .card-body .carrito a
 {

@@ -35,7 +35,7 @@ footer .copy
 }
 .footer .row img
 {
-    width: 40%;
+    width: 60%;
     height: auto;
     z-index: 1;
     margin-right: 0;
@@ -92,8 +92,8 @@ footer .copy
 }
 .footer .row .social_media2 .right ul li i
 {
-    font-size: 1.2em;
-    color: var(--fondo-resaltador);
+    font-size: 1.8em;
+    color: white;
    
 }
 
@@ -101,7 +101,7 @@ footer .copy
 .footer .row .social_media2 .right ul li i:hover
 {
     transition: ease all 0.1s;
-    color: var(--fondo-blanco);
+    color: #222953;
     text-shadow:0 0 2px var(--fondo-resaltador2);
     cursor: pointer;
 }

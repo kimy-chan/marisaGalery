@@ -26,8 +26,9 @@
       </div>
 
       <div class="col-md-6 pt-4">
-        <h2>
+        <h2 class="titulos">
           <%= product[0].nameProduct %>
+            <%= product[0].color %>
         </h2>
         <p>
           <%= product[0].description %>
@@ -41,14 +42,13 @@
               <%= product[0].size %>
             </p>
             <% } %>
-              <p><b>Precio:</b>
-                <%= parseFloat(product[0].price) %> bs
-              </p>
 
-              <button class="link" onclick="">COMPRAR <i class="ri-whatsapp-fill"></i></button>
 
 
         </div>
+        <button class="link"
+          onclick="apiWhatsapp('<%= product[0].nameProduct%> ' ,' <%= product[0].color %>','<%= product[0].size %>')">COTIZAR
+          <i class="ri-whatsapp-fill"></i></button>
 
 
 

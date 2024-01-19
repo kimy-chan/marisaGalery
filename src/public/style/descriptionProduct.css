@@ -33,17 +33,7 @@
     text-decoration: none;
     list-style: none;
 }
-.back i
-{
-    color: var(--fondo-resaltador);
-    font-size: 1em;
-}
-.back:hover
-{
-    color: var(--fondo-resaltador);
-    border: 1px solid var(--fondo-resaltador);
-    transition: 0.2s;
-}
+
 .container-des{
     width: 100%;
     height: 480px;
@@ -83,10 +73,13 @@
 .col-md-6 button:hover
 {
     background-color: var(--fondo-blanco);
-    color: var(--fondo-resaltador);
+    color: #0EC143;
     border: 2px solid var(--fondo-resaltador);
     transition: 0.4s;
+    font-weight: bolder;
+    
 }
+
 
 .col-md-6 .kontrolDeForma
 {
