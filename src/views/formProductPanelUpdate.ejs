@@ -47,7 +47,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="colores" class="form-label">Colores disponibles:</label>
+            <label for="colores" class="form-label">Color disponible:</label>
             <input type="text" class="form-control" value="<%=product[0].color  %>" id="colores" name="colores"
               required>
 
@@ -89,7 +89,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="tallas" class="form-label">Tallas disponibles:</label>
+            <label for="tallas" class="form-label">Talla disponibles:</label>
             <input type="text" class="form-control" id="tallas" value="<%=product[0].size  %>" name="tallas">
             <% error.forEach(err=> { %>
               <% if (err.path==='tallas' ) { %>
@@ -102,13 +102,19 @@
 
         </div>
         <div class="mb-6">
-          <label for="imagenes">Selecciona una o varias imágenes:</label>
+          <label for="imagenes">Selecciona las imágenes menor a 10MB:</label>
           <input type="file" id="imagenes" name="imagenes" multiple accept=".jpg, .jpeg, .JPG, .JPEG, .png">
 
-          <div class="container">
+          <div class="container imgcon">
 
             <%if(img.length> 0){%>
-              <% img.forEach(item=>{%> <img src="<%=item.image %>" alt="" width="100px">
+              <% img.forEach(item=>{%>
+
+                <a class="enlace"
+                  href="/imgdelete/<%=item.idProductDate%>/<%=product[0].idProduct %>/<%=item.imagenId %>">
+                  <span class="delete-icon">X</span>
+                </a>
+                <img src="<%=item.image %>" alt="" width="100px">
                 <%}) %>
                   <%}else{%> <span>sin imagen</span>
                     <%} %>

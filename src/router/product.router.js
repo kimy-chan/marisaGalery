@@ -14,4 +14,7 @@ router.get("/decription/:idProduct", (req, res) => { productController.descripti
 router.get("/delete-product/:idProduct", [VerifyCookie, rolesUser], productController.deleteProduct)
 router.get("/update-product/:idProduct", [VerifyCookie, rolesUser], productController.formUpdateProdcut)
 router.post("/update-product/:idProduct", [VerifyCookie, rolesUser, upload.array("imagenes"), productValidatorUpdate()], productController.updateProduct)
+
+//eliminar imagen del formulario de actulizar 
+router.get("/imgDelete/:idImagen/:idProduct/:idImagenClouy", productController.deleteImagenFormUpdate)
 module.exports = router;

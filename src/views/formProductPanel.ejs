@@ -44,7 +44,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="colores" class="form-label">Colores disponibles:</label>
+            <label for="colores" class="form-label">Color disponible:</label>
             <input type="text" class="form-control" value="<%=values.colores  %>" id="colores" name="colores" required>
 
             <% error.forEach(err=> { %>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="mb-3">
-            <label for="tallas" class="form-label">Tallas disponibles:</label>
+            <label for="tallas" class="form-label">Talla disponible:</label>
             <input type="text" class="form-control" id="tallas" value="<%=values.tallas  %>" name="tallas">
             <% error.forEach(err=> { %>
               <% if (err.path==='tallas' ) { %>
@@ -98,7 +98,7 @@
 
         </div>
         <div class="mb-6">
-          <label for="imagenes">Selecciona una o varias imágenes:</label>
+          <label for="imagenes">Selecciona las imágenes menor a 10MB:</label>
           <input type="file" id="imagenes" name="imagenes" multiple required accept=".jpg, .jpeg, .JPG, .JPEG, .png">
 
 

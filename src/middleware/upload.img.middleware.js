@@ -1,10 +1,12 @@
 
 const multer = require("multer")
 const path = require("path")
+const uuid = require("uuid")
 const storage = multer.diskStorage({
     destination: path.join(__dirname, '../public/upload'),
     filename: (req, file, cb) => {
-        return cb(null, new Date().getTime() + path.extname(file.originalname))
+        const uniqueFilename = new Date().getTime() + '_' + uuid.v4() + path.extname(file.originalname);
+        return cb(null, uniqueFilename)
     }
 })
 

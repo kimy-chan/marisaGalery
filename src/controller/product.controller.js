@@ -6,7 +6,7 @@ const cloudinary = require("cloudinary")
 const path = require("path")
 
 const fs = require("fs");
-
+const { log } = require("console");
 
 class ProductController {
 
@@ -58,7 +58,7 @@ class ProductController {
     const rolUser = req.user.nameRole
     const img = req.files
     let pathImgCloud = []
-
+    console.log(img);
 
     const result = validationResult(req)
     try {
@@ -91,7 +91,7 @@ class ProductController {
       return res.redirect("/add-product?mensaje=true")
 
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ mesage: "Error interno del servidor", error });
     } finally {
       for (let i of img) {
         if (fs.existsSync(path.join(__dirname + `../../public/upload/${i.filename}`))) {
@@ -237,7 +237,6 @@ class ProductController {
     try {
       const product = await ModelProduct.getAllProductId({ idProduct })
 
-
       if (req.fileError || !val.isEmpty()) {
         const categories = await ModelCategory.showCategory()
         for (let categoria of categories) {
@@ -287,6 +286,21 @@ class ProductController {
 
 
     }
+
+
+  }
+  //elimnar imagenes del formulario de actulizar
+  async deleteImagenFormUpdate(req, res) {
+    const { idImagen, idProduct, idImagenClouy } = req.params
+    try {
+      await ModelProduct.deleteImagenFormUpdateDatabase(idImagen)
+      await cloudinary.v2.uploader.destroy(idImagenClouy)
+      return res.redirect(`/update-product/${idProduct}`)
+    } catch (error) {
+      console.log(error);
+      return res.status(404).json({ mensaje: 'Error server' })
+    }
+
 
   }
 

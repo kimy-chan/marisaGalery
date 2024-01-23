@@ -1,4 +1,5 @@
 const getConecction = require("./db/db");
+const { login } = require("./model.auth");
 class ModelProduct {
 
 
@@ -213,6 +214,22 @@ class ModelProduct {
     }
   }
 
+  static async deleteImagenFormUpdateDatabase(idiamgen) {
+    let conn
+    const query = "DELETE FROM ProductDate WHERE idProductDate=? "
+    try {
+      conn = await getConecction()
+      await conn.query(query, [idiamgen])
+
+    } catch (error) {
+      return error
+
+
+    } finally {
+
+    }
+
+  }
 
 
 
