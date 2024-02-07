@@ -44,7 +44,7 @@ class ProductController {
         title
       })
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
 
@@ -117,7 +117,7 @@ class ProductController {
       const product = await ModelProduct.descriptionProduct({ idProduct })
       return res.render("descriptionProduct", { product: product, categories: categories, title })
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
   }
@@ -148,7 +148,7 @@ class ProductController {
       });
 
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
   }
@@ -169,7 +169,7 @@ class ProductController {
       }
       return res.redirect("/products-panel?mensaje=delete")
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
 
@@ -216,7 +216,7 @@ class ProductController {
 
       })
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
 
@@ -276,7 +276,7 @@ class ProductController {
       return res.redirect(`/update-product/${idProduct}?mensaje=true`)
 
     } catch (error) {
-      return res.status(500).send("Error interno del servidor" + error);
+      return res.status(500).json({ message: "Error interno del servidor" });
     } finally {
       for (let i of img) {
         if (fs.existsSync(path.join(__dirname + `../../public/upload/${i.filename}`))) {//borra la imagenes del servidor

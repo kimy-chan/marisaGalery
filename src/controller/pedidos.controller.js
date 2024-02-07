@@ -36,7 +36,7 @@ class PedidosController {
         title
       })
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
     }
 
   }
@@ -48,7 +48,7 @@ class PedidosController {
       await ModelPedido.productEntregado({ idOrder, state })
       return res.redirect("/get-order?mensaje=vender")
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
     }
 
 
@@ -64,7 +64,7 @@ class PedidosController {
 
 
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
 

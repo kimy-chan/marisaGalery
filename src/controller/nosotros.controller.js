@@ -11,7 +11,7 @@ class NosotrosController {
 
 
         } catch (error) {
-            return res.status(500).send("Error interno del servidor");
+            returnres.status(500).json({ message: "Error interno del servidor" });
         }
 
     }

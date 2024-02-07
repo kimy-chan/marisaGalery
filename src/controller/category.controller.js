@@ -104,7 +104,7 @@ class CategoryController {
       }
       return res.redirect("/category-panel?CategoriAdd=true")
     } catch (error) {
-      return res.status(500).send("Error interno del servidor", error);
+      return res.status(500).json({ message: "Error interno del servidor" });
     } finally {
       if (image) {
         if (fs.existsSync(path.join(__dirname + `../../public/upload/${image.filename}`))) {
@@ -144,7 +144,7 @@ class CategoryController {
       await cloudinary.v2.uploader.destroy(idImagen)
       return res.redirect("/category-panel?mensajeDelete=true")
     } catch (error) {
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
 
@@ -238,7 +238,7 @@ class CategoryController {
 
     } catch (error) {
 
-      return res.status(500).send("Error interno del servidor");
+      return res.status(500).json({ message: "Error interno del servidor" });
 
     }
 
